@@ -24,5 +24,4 @@ test: copy
 
 deploy: test
 	npm install -g serverless
-	cd build
-	sls deploy -v
+	cd build; sls deploy -v
