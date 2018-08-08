@@ -23,5 +23,4 @@ test: copy
 	cd build && pytest -s -v
 
 deploy: test
-	npm install -g serverless
-	cd build; sls deploy -v
+	export GIT_REPO_NAME=$(shell basename `git rev-parse --show-toplevel`) && env && cd build && sls package && sls deploy -v
